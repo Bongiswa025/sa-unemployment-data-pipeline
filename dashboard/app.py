@@ -32,6 +32,44 @@ with sqlite3.connect(DATABASE_FILE) as connection:
 # Only analyse unemployed records
 data = data[data["employment_status"] == "Unemployed"].copy()
 
+
+# Dashboard filters
+st.sidebar.header("Filter Unemployment Data")
+
+# Province filter
+province_options = ["All"] + sorted(data["province"].dropna().unique().tolist())
+selected_province = st.sidebar.selectbox("Select Province", province_options)
+
+# Age group filter
+age_options = ["All"] + sorted(data["age_group"].dropna().unique().tolist())
+selected_age = st.sidebar.selectbox("Select Age Group", age_options)
+
+# Gender filter
+gender_options = ["All"] + sorted(data["gender"].dropna().unique().tolist())
+selected_gender = st.sidebar.selectbox("Select Gender", gender_options)
+
+# Qualification filter
+qualification_options = ["All"] + sorted(
+    data["qualification"].dropna().unique().tolist()
+)
+selected_qualification = st.sidebar.selectbox(
+    "Select Qualification", qualification_options
+)
+
+# Apply selected filters
+if selected_province != "All":
+    data = data[data["province"] == selected_province]
+
+if selected_age != "All":
+    data = data[data["age_group"] == selected_age]
+
+if selected_gender != "All":
+    data = data[data["gender"] == selected_gender]
+
+if selected_qualification != "All":
+    data = data[data["qualification"] == selected_qualification]
+
+
 # Summary statistics
 total = len(data)
 provinces = data["province"].nunique()
