@@ -1,0 +1,12 @@
+
+id,province,age,gender,qualification,employment_status
+1,Gauteng,24,Female,Matric,Unemployed
+2,Limpopo,29,Male,Diploma,Unemployed
+3,KwaZulu-Natal,22,Female,Degree,Unemployed
+4,Eastern Cape,35,Male,Matric,Unemployed
+5,Mpumalanga,27,Female,Diploma,Unemployed
+6,Free State,31,Male,Degree,Unemployed
+7,North West,21,Female,Matric,Unemployed
+8,Western Cape,40,Male,Certificate,Unemployed
+9,Northern Cape,26,Female,Diploma,Unemployed
+10,Gauteng,33,Male,Degree,Unemployed
