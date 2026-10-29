@@ -104,3 +104,17 @@ st.bar_chart(qualification_counts)
 # Display dataset
 st.subheader("Unemployment Records")
 st.dataframe(data, use_container_width=True)
+
+
+# Download filtered unemployment records
+st.subheader("Download Unemployment Data")
+
+csv_data = data.to_csv(index=False).encode("utf-8")
+
+st.download_button(
+    label="Download Filtered Data as CSV",
+    data=csv_data,
+    file_name="filtered_unemployment_data.csv",
+    mime="text/csv"
+)
+
