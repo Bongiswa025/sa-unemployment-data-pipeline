@@ -101,6 +101,14 @@ st.subheader("Unemployment by Qualification")
 qualification_counts = data["qualification"].value_counts()
 st.bar_chart(qualification_counts)
 
+
+# Unemployment by gender
+st.subheader("Unemployment by Gender")
+
+gender_counts = data["gender"].value_counts()
+st.bar_chart(gender_counts)
+
+
 # Display dataset
 st.subheader("Unemployment Records")
 st.dataframe(data, use_container_width=True)
